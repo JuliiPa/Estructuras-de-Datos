@@ -1,0 +1,41 @@
+DISEÑO DE LOS TADS
+CONCESIÓN VIAL
+
+DATOS
+
+Tramo, cadena de caracteres, descripción del tramo vial 
+Tarifas, arreglo de enteros, valores específicos del peaje según el tipo de vehículo y sus características.
+ServiciosOfrecidos, cadena de caracteres, descripción de los servicios adicionales que se ofrecen en el trayecto.
+
+OPERACIONES
+
+CalcularTarifa(tipoVehículo), Determina el valor del peaje a cobrar según el tipo de vehículo.
+ActualizarCondicionesViales(), Realiza el mantenimiento y mejoras en el trayecto de la concesión para asegurar condiciones adecuadas para el tránsito vehicular.
+----------------------------------------------------
+PUNTO DE COBRO DE PEAJE
+
+DATOS
+
+Casetas, arreglo de casetas, cada caseta realiza el cobro a un vehículo individualmente.
+ColaVehículos, arreglo de vehículos, lista de vehículos que esperan para realizar el pago del peaje.
+TablaCobro, arreglo de enteros, tabla que especifica el valor del peaje para cada tipo de vehículo.
+
+OPERACIONES
+
+RegistrarVehículo(vehículo), Identifica y clasifica al vehículo según su tipo.
+CobrarPeaje(vehículo), Realiza el cobro del peaje correspondiente al vehículo.
+GenerarArqueoCaja(), Crea un reporte de los valores cobrados en una caseta hasta un momento dado, reiniciando la cuenta para continuar el registro.
+
+---------------------------------------------------------------------
+CASETA DE COBRO
+
+DATOS
+
+CuentaCobro, entero, total acumulado de dinero cobrado por la caseta durante el día.
+Cajero, cadena de caracteres, nombre o identificación del cajero responsable del cobro en la caseta.
+TiposVehículos, arreglo de enteros, diferencia los cobros realizados según el tipo de vehículo 
+
+OPERACIONES
+
+RegistrarCobro(vehículo, monto), Añade el monto cobrado por el paso de un vehículo a la cuenta total de la caseta.
+RealizarArqueo(), Genera un reporte de los cobros realizados y reinicia la cuenta de la caseta.
