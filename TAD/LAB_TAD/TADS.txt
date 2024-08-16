@@ -1,0 +1,38 @@
+/*
+PUNTO
+
+DATOS 
+
+
+cordenada, arreglo de 3 enteros, representacion grafica 
+color, arreglo 3 enteros, color del punto
+
+OPERACIONES
+obtener_cordenada(), retorna la dordenada
+obtener_color, retorna el color
+
+_____________
+ESCENA
+
+DATOS
+LimitesEscena: Definición de los límites del espacio en los ejes X, Y y Z, especificando el volumen dentro del cual se renderizan los objetos.
+ListaDeObjetos: Colección de objetos del tipo Objeto3D que existen dentro de la escena.
+
+OPERACIONES
+
+ActualizarVisibilidadObjetos(): Revisa cada objeto en la ListaDeObjetos y actualiza su estado de visibilidad utilizando los LimitesEscena.
+OrdenarObjetosPorProfundidad(): Organiza los objetos en la ListaDeObjetos desde el más lejano hasta el más cercano al observador
+______________
+
+NUBE_PUNTOS
+
+DATOS
+
+NubeDePuntosColorizados: Lista de puntos en el espacio 3D, donde cada punto tiene coordenadas (x, y, z) y atributos de color definidos por valores RGB.
+NombreObjeto: Identificador textual único que permite distinguir y referenciar al objeto dentro de la escena.
+
+OPERACIONES
+
+CalcularCentroide(): Determina el punto central del objeto calculando el promedio de las coordenadas de todos los puntos en la nube.
+EvaluarVisibilidad(limitesEscena): Determina el nivel de visibilidad del objeto dentro de una escena dada, clasificándolo como visible completamente, parcialmente o no visible según la posición de sus puntos respecto a los límites de la escena.
+*/
