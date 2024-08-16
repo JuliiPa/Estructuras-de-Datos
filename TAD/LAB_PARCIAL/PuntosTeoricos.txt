@@ -1,0 +1,9 @@
+PUNTOS TEORICOS
+PRIMER PUNTO
+1.a) La función tiene como parámetro un vector que contiene un dato tipo C.
+Donde el primer elemento de cada dato tipo C se almacenará en la primera posición del vector X y el segundo elemento del mismo tipo en la segunda posición del vector.
+1.b) O(N), ya que en la línea 1 for(;T=V.begin();iT!=vend();iT++) se repite una cantidad de veces siendo n cantidad de elementos en el vector. A partir de iT se pueden recorrer los otros ciclos.
+
+SEGUNDO PUNTO
+2.a) B
+2.b) A
