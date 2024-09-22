@@ -1,0 +1,103 @@
+TAD Arbol:
+Datos Minimos:
+   raiz,senala el nodo que corresponde a la raiz del arbol.
+Comportamiento:
+    Arbol(), crea un arbol con raiz nula.
+    Arbol(val), crea una arbol con raiz de valor val.
+    ~Arbol()
+    esVacio(),booleano, devuelve verdadero si la raiz del arbol es nula.
+    obtenerRaiz(),Nodo, retorna un apuntador a la raiz del arbol.
+    fijarRaiz(nraiz),recibe un apuntador a Nodo y lo asigna a la raiz del arbol.
+    insertarNodo(padre,n), booleano,recibe el valor del padre, el cual se busca, y se le ingresa un Nodo hijo con valor n, si se isnerta retorna verdadero.
+    eliminarNodo(n), booleano ,elimina un nodo de valor n, retorna verdadero si se elimina.
+    buscarNodo(val), retorna un apuntador al nodo de valor val.
+    altura(), entero, retorna la altura del arbol.
+    tamano(), entero, retorna el numero de nodos en el arbol.
+    preOrden(), imprime en preorden el arbol.
+    posOrden(), imprime en posorden el arbol.
+    inOrden(), imprime en inorden el arbol.
+    nivelOrden(), imprime en nivel orden el arbol.
+
+TAD Nodo
+Datos Minimos:
+    T dato,?, contenido del nodo
+    desc,contenedor, contiene un conjunto apuntadores a nodos.
+Comportamiento:
+  Nodo(), crea un nodo vacio.
+    Nodo(const T& val), crea un nodo a partir de un valor
+    ~Nodo()
+    obtenerDato(),?, retorna el dato que es contenido por el nodo
+    fijarDato(val), reemplaza el valor de un nodo por val.
+    obtenerDesc(),contenedor, retorna la el conjunto de descendientes
+    fijarDesc(listaDesc), fija el conjunto de Nodos listaDesc como el conjunto de descendientes del nodo
+    adicionarDesc( nval), adiciona un Nodo creado a partir de val al conjunto de descendientes
+    eliminarDesc( val),booleano, elimina el nodo de valor val del conjunto de descendientes, retorna verdadero si se elimina.
+    buscarDesc(val), nodo*,retorna un apuntador al descendiente de valor val.
+    limpiarLista(), elimina la lista de descendientes.
+    numDesc(),entero, retorna el numero de descendientes del nodo.
+    insertarNodo(padre, n), inserta un nodo de valor n, en el nodo padre de alguno de los subarboles. retorna verdadero si se logra.
+    eliminarNodo(n), elimina el nodo de valor n de alguno de los subarboles
+    buscarNodo(val), apuntador,retorna un apuntador al nodo de valor val de alguno de los subarboles.
+    altura(), entero,retorna la altura del nodo
+    tamano(), entero,retorna el numero de nodos del subarbol que tiene como raiz el nodo
+    preOrden(), imprime el arbol que tiene como raiz el nodo en PreOrden.
+    posOrden(), imprime el arbol que tiene como raiz el nodo en PosORden
+    inOrden(), imprime el arbol que tiene como raiz el nodo en inOrden.
+    nivelOrden(int nivel,int lvActual), imprime el arbol que tiene como raiz el nodo en NivelOrden.
+
+
+TADS
+
+1. TAD Nodo
+  - CrearNodo(dato): Crea un nodo con el dato proporcionado.
+  - ObtenerDato(nodo): Retorna el dato almacenado en el nodo.
+  - FijarDato(nodo, dato): Asigna un nuevo dato al nodo.
+  - AgregarHijo(nodo, hijo): Agrega un nodo hijo al nodo actual.
+  - EliminarHijo(nodo, hijo): Elimina un nodo hijo del nodo actual.
+  - ObtenerHijos(nodo): Retorna una lista de los nodos hijos.
+
+
+2. TAD Arbol
+  - CrearArbol(raiz): Crea un árbol con un nodo raíz proporcionado.
+  - EsVacio(arbol): Retorna true si el árbol está vacío, false de lo contrario.
+  - ObtenerRaiz(arbol): Retorna el nodo raíz del árbol.
+  - FijarRaiz(arbol, raiz): Asigna un nuevo nodo raíz al árbol.
+  - InsertarNodo(arbol, padre, dato): Inserta un nodo con el dato proporcionado como hijo del nodo padre.
+  - EliminarNodo(arbol, dato): Elimina un nodo con el dato especificado.
+  - BuscarNodo(arbol, dato): Busca un nodo con el dato especificado y lo retorna.
+  - PreOrden(arbol): Realiza un recorrido en preorden del árbol.
+  - InOrden(arbol): Realiza un recorrido en inorden del árbol.
+  - PosOrden(arbol): Realiza un recorrido en postorden del árbol.
+  - NivelOrden(arbol): Realiza un recorrido por niveles del árbol.
+
+
+
+MODIFICACIONES
+
+1. arbol.h
+  Cambios Realizados:
+  - Eliminación de using namespace std;: Se eliminó esta línea para evitar conflictos potenciales en otros archivos.
+  - Corrección de la firma de eliminar: Se cambió la firma del método eliminar de bool eliminar(T val); a bool eliminar(T& val); para que coincida con la implementación en arbol.hxx.
+
+2. arbol.hxx
+  Cambios Realizados:
+  - Corrección del constructor por defecto Arbol<T>::Arbol(): Se inicializó correctamente el puntero raiz en lugar de una variable local.
+  - Cambio en la firma de eliminar: Se modificó la firma del método eliminar para aceptar un argumento por referencia.
+  - Corrección en obtenerRaiz: Se cambió para que devuelva el valor del dato de la raíz en lugar del puntero al nodo.
+
+3. nodo.h
+  Cambios Realizados:
+  - Cambio en el tipo del vector hijos: Se cambió el tipo del vector de vector<Nodo<T>> a vector<Nodo<T>*> para que almacene punteros en lugar de objetos.
+  - Eliminación de using namespace std;: Se eliminó esta línea para evitar conflictos.
+
+4. nodo.hxx
+  Cambios Realizados:
+  - Inclusión de la biblioteca <queue>: Se agregó la inclusión de <queue> para poder utilizar std::queue en el recorrido por niveles.
+  - Corrección en el método adicionarDesc: Se cambió para agregar punteros a los nodos hijos en lugar de copiar los objetos.
+  - Corrección en el método eliminarDesc: Se implementó la eliminación correcta del nodo hijo con el valor dado.
+  - Corrección en nivelOrden: Se agregó el manejo correcto de la cola std::queue y el recorrido del subárbol por niveles.
+
+5. prueba_arbol.cpp
+  Cambios Realizados:
+  - Revisión de los métodos llamados: Se verificó que los métodos llamados en main() existan y estén bien implementados en Arbol.
+  - Simplificación del código: Se eliminó un comentario innecesario y se verificaron las inclusiones correctas.
