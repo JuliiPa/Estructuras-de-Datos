@@ -1,0 +1,59 @@
+TADS
+1. TAD NodoBinarioAVL
+Propiedades:
+    - dato: Valor almacenado en el nodo.
+    - hijoIzq: Puntero al hijo izquierdo.
+    - hijoDer: Puntero al hijo derecho.
+
+Operaciones:
+    - NodoBinarioAVL(): Constructor por defecto que inicializa el nodo.
+    - ~NodoBinarioAVL(): Destructor del nodo.
+    - T& getDato(): Devuelve el dato almacenado en el nodo.
+    - void setDato(T&): Establece el dato almacenado en el nodo.
+    - NodoBinarioAVL<T>* getHijoIzq(): Devuelve el puntero al hijo izquierdo.
+    - NodoBinarioAVL<T>* getHijoDer(): Devuelve el puntero al hijo derecho.
+    - void setHijoIzq(NodoBinarioAVL<T>*): Establece el puntero al hijo izquierdo.
+    - void setHijoDer(NodoBinarioAVL<T>*): Establece el puntero al hijo derecho.
+
+
+2. TAD ArbolBinarioAVL
+Propiedades:
+    - raiz: Puntero al nodo raíz del árbol.
+
+Operaciones:
+    - ArbolBinarioAVL(): Constructor por defecto que inicializa el árbol.
+    - ~ArbolBinarioAVL(): Destructor del árbol.
+    - void setRaiz(NodoBinarioAVL<T>*): Establece la raíz del árbol.
+    - NodoBinarioAVL<T>* getRaiz(): Devuelve la raíz del árbol.
+    - bool esVacio(): Verifica si el árbol está vacío.
+    - T& datoRaiz(): Devuelve el dato almacenado en la raíz.
+    - int altura(NodoBinarioAVL<T>*): Calcula la altura del árbol.
+    - int tamano(NodoBinarioAVL<T>*): Calcula el número de nodos en el árbol.
+    - bool insertar(T&): Inserta un valor en el árbol.
+    - bool eliminar(T&): Elimina un valor del árbol.
+    - bool buscar(T&): Busca un valor en el árbol.
+    - NodoBinarioAVL<T>* giroDerecha(NodoBinarioAVL<T>*&): Realiza una rotación simple a la derecha.
+    - NodoBinarioAVL<T>* giroIzquierda(NodoBinarioAVL<T>*&): Realiza una rotación simple a la izquierda.
+    - NodoBinarioAVL<T>* giroIzquierdaDerecha(NodoBinarioAVL<T>*&): Realiza una rotación doble izquierda-derecha.
+    - NodoBinarioAVL<T>* giroDerechaIzquierda(NodoBinarioAVL<T>*&): Realiza una rotación doble derecha-izquierda.
+    - void preOrden(NodoBinarioAVL<T>*): Recorre el árbol en preorden.
+    - void inOrden(NodoBinarioAVL<T>*): Recorre el árbol en inorden.
+    - void posOrden(NodoBinarioAVL<T>*): Recorre el árbol en posorden.
+    - void nivelOrden(NodoBinarioAVL<T>*): Recorre el árbol por niveles.
+
+
+MODIFICACIONES
+1. Archivo Arbolito.cpp
+    - Cambio en los #include:
+        Se cambió #include "ArbolAVL.h" y #include "NodoAVL.h" por:
+            #include "ArbolBinarioAVL.h"
+            #include "NodoBinarioAVL.h"
+
+    - Cambio de nombre de clase:
+        Se cambió la referencia de la clase ArbolAVL<int> a ArbolBinarioAVL<int>:
+            ArbolBinarioAVL<int> arbolito;
+            Mensajes de depuración:
+
+    - Se añadieron mensajes para confirmar las acciones realizadas:
+            cout << "Insertando: " << dato << endl;
+            cout << "Eliminando: " << dato << endl;
