@@ -1,0 +1,41 @@
+TAD ArbolExp
+Datos Minimos:
+    raiz,NodoExp , indica el inicio del arbol
+  operadores, conjunto de operadores validos para el arbol.
+Comportamiento:
+    ArbolExpresion(),crea un arbolExpresion
+    llenarDesdePrefija(expresion),recibe una expresion en Polaca y llena el arbol a partir de esta.
+    llenarDesdePosfija (expresion),recibe una expresion en Polaca Inversa y llena el arbol a partir de esta.
+    obtenerPrefija(),cadena de caracteres, retorna una cadena de caracteres que expresa el arbol en Polaca.
+    obtenerInfija(),cadena de caracteres, retorna una cadena de caracteres que expresa el arbol en Infija.
+    obtenerPosfija(),cadena de caracteres, retorna una cadena de caracteres que expresa el arbol en Polaca Inversa.
+    Prefija(subarbol),cadena de caracteres,retorna una cadena de caracteres que expresa el subarbol en Polaca.
+    Posfija(subarbol),cadena de caracteres,retorna una cadena de caracteres que expresa el subarbol en Polaca inversa.
+    Infija(subarbol),cadena de caracteres,retorna una cadena de caracteres que expresa el subarbol en Infija.
+    evaluar(),entero, retorna el resultado de la expresion contenida en el arbol.
+    esOp(ope),booleano ,verifica si una cadena de caracteres esta en el conjunto de operadores validos, si lo esta retorna true.
+    eval(NodoExp *), entero,evalua la expresion contenida en un subarbol.
+    NodoExp* llenarDesdePrefijaa(vector<string> &q, unsigned int &pos, NodoExp* actual);
+    NodoExp* llenarDesdePosfijaa (vector<string> &q, unsigned int &pos, NodoExp* actual);
+    void tokenizar(const string & s,vector <string> &q);
+;
+
+
+TAD NodoExp
+Datos Minimos:
+    data,string, posee el contenido del nodo
+    left, NodoExp,apuntador hacia el hijo izquierdo
+   right, NodoExp,apuntador hacia el hijo derecho
+   op, booleano, determina si el contenido es un operador(true), o un numero(false).
+Comportamiento:
+    NodoExp(dato),crea un nodo binario e inicializa su dato con el dato enviado por parametro.
+    NodoExp()crea un nodo binario vacio.
+//Setters y Getters
+   getData()
+    setData( val) 
+    getLeft()
+    getRight()
+   setLeft(left)
+    setRight(right)
+ getOp()
+   setOp(left)
