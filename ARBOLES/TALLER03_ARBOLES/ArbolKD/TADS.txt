@@ -1,0 +1,37 @@
+TADS 
+TAD: Node 
+Atributos: 
+
+- puntos, Un vector de coordenadas (puntos) en el espacio multidimensional. 
+- izquierda, Puntero al nodo hijo izquierdo. 
+- derecha, Puntero al nodo hijo derecho. 
+
+Operaciones: 
+
+- Node(), Crea un nodo con un vector de puntos. 
+- vector<double> getPuntos() const: Devuelve las coordenadas del nodo. 
+- void setPuntos(), Modifica las coordenadas del nodo. 
+- Node* getIzquierda() Devuelve el nodo hijo izquierdo. 
+- Node* getDerecha() Devuelve el nodo hijo derecho. 
+
+TAD: KDTree 
+Atributos: 
+
+- raiz, Puntero al nodo raíz del árbol. 
+- dimension, El número de dimensiones de los puntos almacenados en el árbol. 
+
+Operaciones: 
+
+- KDTree(), Inicializa el KDTree con una dimensión dada. 
+- KDTree(), Libera la memoria de todos los nodos al eliminar el árbol. 
+- void AgregarNodoAlArbol(), Agrega un nuevo nodo al árbol.  
+- Node* agregarNodo(), Inserta un nuevo nodo recursivamente dependiendo de la dimensión actual. 
+- bool buscarNodo(), Busca un nodo con coordenadas específicas. 
+- bool buscar(), Busca un nodo con los puntos especificados recursivamente. 
+- string preOrder(), Recorre el árbol en preorden. 
+- string inOrder(),Recorre el árbol en inorden. 
+- string postOrder(), Recorre el árbol en postorden. 
+- void borrarNodos(), Elimina todos los nodos del árbol de forma recursiva. 
+- int getdimension(), Devuelve la dimensión del árbol. 
+- void setdimension(), Modifica la dimensión del árbol. 
+-Node* getraiz(), Devuelve la raíz del árbol. 

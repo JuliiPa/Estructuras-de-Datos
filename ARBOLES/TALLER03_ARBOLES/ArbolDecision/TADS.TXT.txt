@@ -1,0 +1,25 @@
+TAD: Nodo
+Atributos:
+
+pregunta: Cadena que representa la pregunta o condición en el nodo.
+si: Puntero al subárbol si la respuesta es "sí".
+no: Puntero al subárbol si la respuesta es "no".
+Operaciones:
+
+Nodo(): Crea un nodo con una pregunta y punteros nulos para si y no.
+getPregunta() const: Devuelve la pregunta del nodo.
+setPregunta(string nuevaPregunta): Modifica la pregunta del nodo.
+getSi() const: Devuelve el puntero al subárbol "sí".
+getNo() const: Devuelve el puntero al subárbol "no".
+
+TAD: Árbol de Decisión
+Atributos:
+
+raiz: Puntero al nodo raíz del árbol de decisión.
+Operaciones:
+
+ArbolDecision(): Crea un árbol de decisión vacío.
+liberarArbol(Nodo* nodo): Libera la memoria del árbol recursivamente.
+establecerRaiz(Nodo* nodo): Establece el nodo raíz del árbol.
+iniciarDecision(): Inicia el proceso de toma de decisiones en el árbol.
+crearNodo(string pregunta): Crea un nuevo nodo con la pregunta especificada.
