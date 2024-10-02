@@ -1,0 +1,17 @@
+TAD ArbolRedBlack
+Datos Minimos:
+- data: Almacena el valor del nodo.
+- color: Almacena el color del nodo, que puede ser RED o BLACK. El color se define con el enumerador Color que tiene dos valores posibles: RED y BLACK.
+- left: Puntero al hijo izquierdo.
+- right: Puntero al hijo derecho.
+- parent: Puntero al nodo padre.
+
+OPERACIONES
+RedBlackTree(): Inicializa el árbol vacío.
+void insert(const int& n): Inserta un nuevo nodo con el valor n en el árbol Red-Black, manteniendo las propiedades de balance del árbol.
+void inorder(): Realiza un recorrido en orden del árbol, imprimiendo los valores de los nodos en secuencia.
+void rotateLeft(): Realiza una rotación a la izquierda para ayudar a balancear el árbol.
+void rotateRight(): Realiza una rotación a la derecha para balancear el árbol.
+void fixViolation(): Corrige violaciones en las reglas del árbol Red-Black que pueden ocurrir después de la inserción de un nodo.
+void inorderHelper(): Función auxiliar que realiza el recorrido en orden de los nodos.
+Node* getRoot(): Devuelve el nodo raíz del árbol.
